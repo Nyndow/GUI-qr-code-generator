@@ -1,0 +1,1 @@
+# GUI-qr-code-generator
