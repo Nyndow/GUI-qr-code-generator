@@ -1,6 +1,6 @@
 import segno
 from datetime import datetime
-from config import OUTPUT_FOLDER
+from config import OUTPUT_FOLDER, PNG_SCALES
 
 
 def timestamp():
@@ -19,13 +19,15 @@ def detect_url(text: str):
     return text
 
 
-def generate_qr(data, scale, fmt_choice):
+def generate_qr(data, res_choice, fmt_choice):
 
     data = detect_url(data)
 
     files = []
 
     qr = segno.make(data)
+
+    scale = PNG_SCALES.get(res_choice, 16)
 
     if fmt_choice in (1, 3):
         png_file = OUTPUT_FOLDER / f"qr_{timestamp()}.png"

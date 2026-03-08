@@ -26,5 +26,6 @@ Generate **PNG, SVG, or both formats** for any link or text, with customizable r
 
 ```bash
 pip install segno ttkbootstrap
+python main.py
+``` 
 
-python generate.py
