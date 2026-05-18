@@ -26,7 +26,7 @@ def detect_url(text: str) -> str:
     return text
 
 
-def generate_qr(data, res_choice, fmt_choice):
+def generate_qr(data, res_choice, fmt_choice): ##
 
     data = detect_url(data)
 
