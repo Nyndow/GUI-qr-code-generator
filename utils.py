@@ -1,19 +1,26 @@
 import segno
 from datetime import datetime
 from config import OUTPUT_FOLDER, PNG_SCALES
+import re
 
 
 def timestamp():
     return datetime.now().strftime("%Y%m%d_%H%M%S")
 
 
-def detect_url(text: str):
+def detect_url(text: str) -> str:
     text = text.strip()
 
-    if text.startswith(("http://", "https://")):
+    if re.match(r'^[a-zA-Z][a-zA-Z0-9+\-.]*://', text):
         return text
 
-    if "." in text and " " not in text:
+    if text.startswith("//"):
+        return "https:" + text
+
+    if ' ' not in text and re.match(
+        r'^(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?::\d+)?(?:[/?#]\S*)?$',
+        text, re.IGNORECASE
+    ):
         return "https://" + text
 
     return text
