@@ -3,9 +3,8 @@ from ttkbootstrap.constants import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
-from utils import generate_qr, generate_preview
-from config import OUTPUT_FOLDER, PREVIEW_SIZES
-
+from helper.utils import generate_qr, generate_preview
+from config.app_config import OUTPUT_FOLDER, PREVIEW_SIZES
 
 class QRApp:
 

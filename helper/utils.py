@@ -1,6 +1,6 @@
 import segno
 from datetime import datetime
-from config import OUTPUT_FOLDER, PNG_SCALES
+from config.app_config import OUTPUT_FOLDER, PNG_SCALES
 import re
 
 

@@ -1,2 +1,4 @@
 segno
 ttkbootstrap
+fastapi
+uvicorn
